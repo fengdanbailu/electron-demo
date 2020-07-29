@@ -1,0 +1,23 @@
+<!--
+ * @Author: gm.chen
+ * @Date: 2020-07-29 13:23:16
+ * @LastEditors: gm.chen
+ * @LastEditTime: 2020-07-29 14:11:11
+ * @Description: file content
+ * @FilePath: /electron-demo/index.html
+--> 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron-demo</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+  <body>
+    <h1>版本信息</h1>
+    Node: <script>document.write(process.versions.node)</script><br>
+    Chrome: <script>document.write(process.versions.chrome)</script><br>
+    Electron: <script>document.write(process.versions.electron)</script>.
+  </body>
+</html>
