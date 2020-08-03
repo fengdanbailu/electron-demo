@@ -1,3 +1,11 @@
+/*
+ * @Author: gm.chen
+ * @Date: 2020-07-29 13:22:31
+ * @LastEditors: gm.chen
+ * @LastEditTime: 2020-07-29 16:53:17
+ * @Description: file content
+ * @FilePath: /electron-demo/main.js
+ */ 
 const { app, BrowserWindow } = require('electron')
 
 function createWindow () {   
@@ -15,6 +23,7 @@ function createWindow () {
 
   // 打开开发者工具
   win.webContents.openDevTools()
+  console.log(app);
 }
 
 // Electron会在初始化完成并且准备好创建浏览器窗口时调用这个方法
