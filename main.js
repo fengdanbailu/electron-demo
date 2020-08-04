@@ -2,7 +2,7 @@
  * @Author: gm.chen
  * @Date: 2020-07-29 13:22:31
  * @LastEditors: gm.chen
- * @LastEditTime: 2020-07-29 16:53:17
+ * @LastEditTime: 2020-08-04 09:10:31
  * @Description: file content
  * @FilePath: /electron-demo/main.js
  */ 
@@ -22,8 +22,9 @@ function createWindow () {
   win.loadFile('index.html')
 
   // 打开开发者工具
-  win.webContents.openDevTools()
-  console.log(app);
+  if (process.env.NODE_ENV === 'development') {
+    win.webContents.openDevTools();
+  }
 }
 
 // Electron会在初始化完成并且准备好创建浏览器窗口时调用这个方法
