@@ -1,23 +1,21 @@
-<!--
- * @Author: gm.chen
- * @Date: 2020-07-29 13:23:16
- * @LastEditors: gm.chen
- * @LastEditTime: 2020-07-29 14:11:11
- * @Description: file content
- * @FilePath: /electron-demo/index.html
---> 
+<!--index.html-->
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Electron-demo</title>
-    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Hello World!</title>
   </head>
   <body>
-    <h1>版本信息</h1>
-    Node: <script>document.write(process.versions.node)</script><br>
-    Chrome: <script>document.write(process.versions.chrome)</script><br>
-    Electron: <script>document.write(process.versions.electron)</script>.
+    <h1>Hello World!</h1>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+
+    <！-- 您也可以此进程中运行其他文件 -->
+    <script src="./renderer.js"></script>
   </body>
 </html>

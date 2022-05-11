@@ -1,23 +1,62 @@
 {
-  "description": "This is a demo for electron",
-  "author": "gm.chen",
-  "name": "electron-demo",
-  "version": "0.1.1",
+  "name": "my-electron-demo",
+  "version": "1.0.0",
+  "description": "first electron application",
   "main": "main.js",
   "scripts": {
-    "dev": "electron .",
-    "build:ia32": "electron-builder --win --ia32",
-    "build:x64": "electron-builder --win --x64",
-    "build:mac": "electron-builder --mac",
-    "build": "yarn build:mac & yarn build:x64"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
-  "devDependencies":{
-    "electron-builder": "^22.7.0",
-    "electron": "^9.1.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengdanbailu/electron-demo.git"
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "gmchen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fengdanbailu/electron-demo/issues"
+  },
+  "homepage": "https://github.com/fengdanbailu/electron-demo#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^18.2.2"
   },
   "dependencies": {
-    "asar": "^3.0.3",
-    "electron-packager": "^15.0.0",
-    "global": "^4.4.0"
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "my_electron_demo"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   }
 }
